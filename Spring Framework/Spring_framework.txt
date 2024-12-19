@@ -1,0 +1,59 @@
+Spring modules
+
+Spring core - Core, bean , Context , spEL
+
+AOP,Aspect,Instrumentation,Messaging
+
+Data Access/Integration - JDBC,ORM,OXM,JMS
+
+WEB - Web,Servlet,Portlet,WebSocket
+
+TEST - JUNIT,TestNG,JMETER
+
+
+Spring IOC Container
+- Component of spring 
+- Creates object
+- Hold created object in memory
+- Can inject one object to another object as required
+- Dependency inject
+
+It maintains every object's lifecycle - from creation to destruction
+- we provide beans(pojo's) and config(XML)
+
+Application Context (extends BeanFactory) 
+
+- interface 
+
+1.ClasspathXMLApplicationContext
+It searches XML config in JAVA classpath.
+
+2.AnnotationConfigApplicationContext
+It searches for the beans on which annotations is used.
+
+3.FileSystemXMLApplicationContext
+It search config files from file system.
+
+
+
+
+Dependency Injection
+
+- Can be done in 2 ways
+1. Using Setter Injection
+2. Using Constructor Injection
+
+Configuration file(XML) - To declare beans and dependencies
+    - Used to define configurations for IOC container.
+    - Classes which are provided to IOC containers are called beans.
+
+Data Types(Dependencies)
+1. Primitive data types
+    -byte,short,int,long,float,double,char,boolean
+
+2. Collection type
+    -List,Set,Map and Properties
+
+3. Reference type
+    -Other class objects
+
