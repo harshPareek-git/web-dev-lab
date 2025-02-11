@@ -1,3 +1,2 @@
-(i < 10) {
-//   console.log(i++);
-// }
+word[i];
+  //   console.log(finalWord
