@@ -12,9 +12,12 @@ const function_name = (param1,param2)=>{
     function body;
 }
 
-
 */
-
-const hello = ()=>{
-    console.log("hello");
+function world(firstName) {
+  return firstName;
 }
+console.log(world("harsh"));
+
+const hello = () => {
+  console.log("hello");
+};
