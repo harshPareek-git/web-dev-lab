@@ -1,1 +1,2 @@
-love
+
+// console.log(d);
