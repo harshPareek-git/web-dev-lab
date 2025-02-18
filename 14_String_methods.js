@@ -18,3 +18,7 @@ let str = "Neha is a beautiful girl ❤️";
 let love = Number.parseInt(str.slice("Neha is a beautiful girl".length));
 console.log(love);
 console.log(typeof love);
+
+
+
+
