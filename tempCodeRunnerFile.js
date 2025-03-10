@@ -1,2 +1,1 @@
-
-// console.log(nu
+random() == 35;
