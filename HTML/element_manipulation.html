@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Element Manipulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .demo-box {
+            border: 2px solid #333;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+        .hidden {
+            display: none;
+        }
+        button {
+            margin: 5px;
+            padding: 5px 10px;
+        }
+    </style>
+       <script type="module" src="34_SearchingDOM.js"></script>
+</head>
+<body>
+    <h1>JavaScript Element Manipulation Examples</h1>
+
+    <!-- 1. Selecting Elements -->
+    <div class="demo-box">
+        <h2>1. Selecting Elements</h2>
+        <p id="demo-text">This is a demo paragraph</p>
+        <p class="sample-class">Element with class</p>
+        <button onclick="demonstrateSelectors()">Show Selectors</button>
+    </div>
+
+    <!-- 2. Changing Content -->
+    <div class="demo-box">
+        <h2>2. Changing Content</h2>
+        <p id="content-demo">Original Text</p>
+        <button onclick="changeContent()">Change Content</button>
+    </div>
+
+    <!-- 3. Modifying Attributes -->
+    <div class="demo-box">
+        <h2>3. Modifying Attributes</h2>
+        <img id="demo-image" src="https://via.placeholder.com/150" alt="placeholder">
+        <button onclick="modifyAttributes()">Modify Image</button>
+    </div>
+
+    <!-- 4. Styling Elements -->
+    <div class="demo-box">
+        <h2>4. Styling Elements</h2>
+        <p id="style-demo">Style this text</p>
+        <button onclick="changeStyles()">Change Style</button>
+    </div>
+
+    <!-- 5. Creating and Adding Elements -->
+    <div class="demo-box">
+        <h2>5. Creating and Adding Elements</h2>
+        <div id="container"></div>
+        <button onclick="createElements()">Create Elements</button>
+    </div>
+
+    <!-- 6. Event Handling -->
+    <div class="demo-box">
+        <h2>6. Event Handling</h2>
+        <button id="event-button">Click Me</button>
+        <p id="event-output"></p>
+    </div>
+
+    <script>
+        // 1. Selecting Elements
+        function demonstrateSelectors() {
+            // By ID
+            const elementById = document.getElementById('demo-text');
+            elementById.style.color = 'red';
+
+            // By Class
+            const elementsByClass = document.getElementsByClassName('sample-class');
+            for(let element of elementsByClass) {
+                element.style.fontWeight = 'bold';
+            }
+
+            // By Query Selector
+            const elementByQuery = document.querySelector('.sample-class');
+            elementByQuery.style.fontStyle = 'italic';
+        }
+
+        // 2. Changing Content
+        function changeContent() {
+            const element = document.getElementById('content-demo');
+            
+            // Using innerHTML
+            element.innerHTML = 'Changed using <strong>innerHTML</strong>';
+            
+            // Using textContent (after 1 second)
+            setTimeout(() => {
+                element.textContent = 'Changed using textContent';
+            }, 1000);
+        }
+
+        // 3. Modifying Attributes
+        function modifyAttributes() {
+            const img = document.getElementById('demo-image');
+            
+            // Change src attribute
+            img.setAttribute('src', 'https://via.placeholder.com/200');
+            
+            // Add new attribute
+            img.setAttribute('title', 'Modified Image');
+            
+            // Check if attribute exists
+            console.log('Has title:', img.hasAttribute('title'));
+        }
+
+        // 4. Styling Elements
+        function changeStyles() {
+            const element = document.getElementById('style-demo');
+            
+            // Direct style manipulation
+            element.style.color = 'blue';
+            element.style.backgroundColor = '#f0f0f0';
+            element.style.padding = '10px';
+            element.style.borderRadius = '5px';
+            
+            // Using classList
+            element.classList.add('highlight');
+            
+            // Remove class after 2 seconds
+            setTimeout(() => {
+                element.classList.remove('highlight');
+            }, 2000);
+        }
+
+        // 5. Creating and Adding Elements
+        function createElements() {
+            const container = document.getElementById('container');
+            
+            // Create new element
+            const newDiv = document.createElement('div');
+            newDiv.textContent = 'Dynamically created element';
+            newDiv.style.padding = '10px';
+            newDiv.style.margin = '5px';
+            newDiv.style.backgroundColor = '#e0e0e0';
+            
+            // Add to document
+            container.appendChild(newDiv);
+            
+            // Create and insert before
+            const anotherDiv = document.createElement('div');
+            anotherDiv.textContent = 'Inserted before';
+            container.insertBefore(anotherDiv, newDiv);
+        }
+
+        // 6. Event Handling
+        document.getElementById('event-button').addEventListener('click', function(event) {
+            const output = document.getElementById('event-output');
+            output.textContent = 'Button clicked at: ' + new Date().toLocaleTimeString();
+            
+            // Event object properties
+            console.log('Event type:', event.type);
+            console.log('Target element:', event.target);
+        });
+
+        // Additional Event Listeners for demonstration
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM fully loaded');
+        });
+
+        // Mouse move event (with debouncing)
+        let timeout;
+        document.addEventListener('mousemove', function(event) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                console.log('Mouse position:', event.clientX, event.clientY);
+            }, 500);
+        });
+    </script>
+</body>
+</html> 

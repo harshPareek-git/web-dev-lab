@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Including JavaScript in HTML</title>
+
+    <!-- Method 1: Including JavaScript in head with defer -->
+    <script defer src="script.js"></script>
+
+    <!-- Method 2: Including JavaScript in head with async -->
+    <!-- <script async src="script.js"></script> -->
+
+    <!-- Method 3: Internal JavaScript -->
+    <script>
+        // This is internal JavaScript code
+        function internalFunction() {
+            alert('This is from internal JavaScript!');
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .demo-section {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">JavaScript Integration Demo</h1>
+
+    <div class="demo-section">
+        <h2>External JavaScript (Method 1 & 2)</h2>
+        <button id="changeButton">Change Text</button>
+        <button id="colorButton">Change Color</button>
+    </div>
+
+    <div class="demo-section">
+        <h2>Internal JavaScript (Method 3)</h2>
+        <button onclick="internalFunction()">Show Alert</button>
+    </div>
+
+    <div class="demo-section">
+        <h2>Inline JavaScript (Method 4)</h2>
+        <button onclick="alert('This is inline JavaScript!')">Inline Alert</button>
+    </div>
+
+    <!-- Method 5: Including JavaScript at the end of body -->
+    <script>
+        // This ensures DOM is loaded before script runs
+        console.log('DOM is fully loaded');
+    </script>
+</body>
+</html> 
