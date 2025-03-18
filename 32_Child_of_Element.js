@@ -1,3 +1,4 @@
+
 //Child of Element
 
 //Parent of Element
@@ -17,4 +18,14 @@
 //Last Element Child of Element
 
 //Element Index
+
+
+
+//Element.firstChild();
+//Element.lastChild();
+//Element.childNodes();
+//Element.children();
+//Element.firstElementChild();
+//Element.lastElementChild();
+//Element.children();
 
