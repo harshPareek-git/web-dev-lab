@@ -32,9 +32,9 @@ This project is licensed under the [MIT License](https://github.com/harshPareek-
 
 ## 🌐 Connect with Us
 
-- **Website:** [www.webdevlab.com](https://www.webdevlab.com)
-- **Twitter:** [@webdevlab](https://twitter.com/webdevlab)
-- **Email:** contact@webdevlab.com
+- **Website:** To be updated
+- **Twitter:** To be updated
+- **Email:** To be updated
 
 ## 🙏 Acknowledgements
 
